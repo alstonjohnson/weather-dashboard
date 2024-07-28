@@ -2,7 +2,7 @@
 const weatherBody = document.getElementById('weather-info');
 
 function weatherApi() {
-    const requestUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat=32.808180&lon=-95.391150&exclude={part}&appid=43fece3568ad612b63990ffde119096a'
+    const requestUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat=32.808180&lon=--95.391150&appid=43fece3568ad612b63990ffde119096a'
         fetch(requestUrl)
         .then(function(response) {
             return response.json();
