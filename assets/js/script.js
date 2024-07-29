@@ -17,3 +17,12 @@ function weatherApi() {
     }
 
 weatherAPI ();
+
+const cityInput = document.getElementById("city-search");
+
+function onSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    localStorage.setItem("name", nameInput.value);
+
+}
