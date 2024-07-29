@@ -9,7 +9,7 @@ function weatherApi() {
         })
         .then(function(data) {
             console.log(data);
-            const currentWeather = document.createElement('p');
+            const currentWeather = document.createElement('table');
             currentWeather.textContent = 'Current: ' + data.currentConditions.conditions + ' Temp: ' + data.currentConditions.temp + 'F° Feels Like:' + data.currentConditions.feelslike + 'F°';
             weatherBody.appendChild(currentWeather);
 
