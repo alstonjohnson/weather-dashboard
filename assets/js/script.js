@@ -21,8 +21,8 @@ weatherAPI ();
 const cityInput = document.getElementById("city-search");
 
 function onSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
   
-    localStorage.setItem("name", nameInput.value);
+    localStorage.setItem("city-search", cityInput.value);
 
 }
