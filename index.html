@@ -1,91 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 
 </head>
+
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
+    <header class="container-fluid">
+        <h1>Weather Dashboard</h1>
+    </header>
 
-
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Weather Dashboard</a>
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <!-- <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li> -->
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex mt-3" role="search">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search for a city" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button> -->
-              </form>
-            </div>
-          </div>
-        </div>
-    </nav>
 
     <div class="container-fluid">
         <div class="row content">
-          <div class="col-sm-3 sidenav">
-            <!-- <h4>John's Blog</h4>
+            <div class="col-3 sidenav">
+                <!-- <h4>John's Blog</h4>
             <ul class="nav nav-pills nav-stacked">
               <li class="active"><a href="#section1">Home</a></li>
               <li><a href="#section2">Friends</a></li>
               <li><a href="#section3">Family</a></li>
               <li><a href="#section3">Photos</a></li>
             </ul><br> -->
-            <div class="input-group">
-              <input type="text" class="form-control" id="city-search" placeholder="Search for a city..">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                    Search
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-              </span>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="city-search" placeholder="Search for a city..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="searchbtn" type="button">
+                            Search
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
             </div>
-          </div>
-      
-          <div class="col-sm-9">
-            <h4><small>5-Day Forecast</small></h4>
-            <hr>
-            <section id="weather">
-                <!-- <p class="title has-text-warning">Weather</p> -->
-                <table class="subtitle" id="weather-info"></table>
-            </section>
-            <!-- <h2>I Love Food</h2> -->
-            <!-- <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5> -->
-            <!-- <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br> -->
-            <!-- <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-            <br><br>
-            
+
+            <div class="col-9">
+                <h4><small>5-Day Forecast</small></h4>
+                <hr>
+                <section id="weather">
+                    <!-- <p class="title has-text-warning">Weather</p> -->
+                    <table class="subtitle" id="weather-info"></table>
+                </section>
+                <!-- <h2>I Love Food</h2> -->
+                <!-- <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5> -->
+                <!-- <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br> -->
+                <!-- <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+                <br><br>
+
             </div>
         </div>
     </div>
-       
-      
 
-    
+
+
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
