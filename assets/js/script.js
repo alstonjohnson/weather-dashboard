@@ -16,7 +16,7 @@ fetch(requestUrl)
         .then(function(data) {
             console.log(data);
             let row = document.querySelector('#weather-info');
-            row.innerHTML = data.list
+            row.innerHTML = data.main.feels_like;
                     return `<div class="col">
             <div class="card" style="width: 30vw">
               <h5 class="card-title p-2">Date</h5>
