@@ -7,13 +7,14 @@ console.log("weatherdashboard");
 
 function weatherCood(search) {
 console.log(search);
-let requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=43fece3568ad612b63990ffde119096a`
+let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=43fece3568ad612b63990ffde119096a`
 fetch(requestUrl)
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
             console.log(data);
+
             // const currentWeather = document.createElement('table');
             // currentWeather.textContent = 'Current: ' + data.currentConditions.conditions + ' Temp: ' + data.currentConditions.temp + 'F° Feels Like:' + data.currentConditions.feelslike + 'F°';
             // weatherBody.appendChild(currentWeather);
