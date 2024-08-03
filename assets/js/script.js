@@ -7,7 +7,7 @@ console.log("weatherdashboard");
 
 function weatherCood(search) {
 console.log(search);
-let requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=43fece3568ad612b63990ffde119096a`
+let requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=43fece3568ad612b63990ffde119096a`
 fetch(requestUrl)
         .then(function(response) {
             return response.json();
