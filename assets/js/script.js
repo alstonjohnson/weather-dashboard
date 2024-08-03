@@ -7,7 +7,7 @@ console.log("weatherdashboard");
 
 function weatherCood(search) {
 console.log(search);
-let units = 'metric';
+let units = 'imperial';
 let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=43fece3568ad612b63990ffde119096a`
 fetch(requestUrl)
         .then(function(response) {
