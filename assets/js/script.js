@@ -14,10 +14,12 @@ fetch(requestUrl)
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
-            let row = document.getElementById('weather-info');
-            row.innerHTML =
-            let html = `<div class="col">
+            // console.log(data);
+            let row = document.querySelector('#weather-info');
+            row.innerHTML = data.list
+                .map((day, idx) => {
+                    if (idx <= 2){
+                    return `<div class="col">
             <div class="card" style="width: 30vw">
               <h5 class="card-title p-2">Date</h5>
               <img
@@ -39,7 +41,12 @@ fetch(requestUrl)
                 <p class="card-text">Sunset</p>
               </div>
             </div>
-          </div>`
+          </div>`;
+          
+            }
+            })
+            .join(' ');
+
 
             // const currentWeather = document.createElement('table');
             // currentWeather.textContent = 'Current: ' + data.currentConditions.conditions + ' Temp: ' + data.currentConditions.temp + 'F° Feels Like:' + data.currentConditions.feelslike + 'F°';
