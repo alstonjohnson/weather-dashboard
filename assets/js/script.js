@@ -8,17 +8,15 @@ console.log("weatherdashboard");
 function weatherCood(search) {
 console.log(search);
 let units = 'imperial';
-let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=43fece3568ad612b63990ffde119096a&units=${units}`;
+let requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=43fece3568ad612b63990ffde119096a&units=${units}`;
 fetch(requestUrl)
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
-            // console.log(data);
+            console.log(data);
             let row = document.querySelector('#weather-info');
             row.innerHTML = data.list
-                .map((day, idx) => {
-                    if (idx <= 2){
                     return `<div class="col">
             <div class="card" style="width: 30vw">
               <h5 class="card-title p-2">Date</h5>
@@ -28,32 +26,32 @@ fetch(requestUrl)
                 alt="Weather description"
               />
               <div class="card-body">
-                <h3 class="card-title">Weather Label</h3>
-                <p class="card-text">High Temp Low Temp</p>
-                <p class="card-text">HighFeels like</p>
-                <p class="card-text">Pressure</p>
-                <p class="card-text">Humidty</p>
-                <p class="card-text">UV Index</p>
-                <p class="card-text">Precipitation</p>
-                <p class="card-text">Dew Point</p>
-                <p class="card-text">Wind speed and direction</p>
-                <p class="card-text">Sunrise</p>
-                <p class="card-text">Sunset</p>
-              </div>
+                <h3 class="card-title">temp</h3>
+                <p class="card-text">feels like</p>
+            //     <p class="card-text">HighFeels like</p>
+            //     <p class="card-text">Pressure</p>
+            //     <p class="card-text">Humidty</p>
+            //     <p class="card-text">UV Index</p>
+            //     <p class="card-text">Precipitation</p>
+            //     <p class="card-text">Dew Point</p>
+            //     <p class="card-text">Wind speed and direction</p>
+            //     <p class="card-text">Sunrise</p>
+            //     <p class="card-text">Sunset</p>
+            //   </div>
             </div>
           </div>`;
           
             }
-            })
-            .join(' ');
+            )
+            // .join(' ');
 
 
             // const currentWeather = document.createElement('table');
             // currentWeather.textContent = 'Current: ' + data.currentConditions.conditions + ' Temp: ' + data.currentConditions.temp + 'F° Feels Like:' + data.currentConditions.feelslike + 'F°';
             // weatherBody.appendChild(currentWeather);
 
-        })
-}
+        }
+
 
 
 
