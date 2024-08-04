@@ -24,9 +24,11 @@ fetch(requestUrl)
              <div class="card">
                <h5 class="card-title p-2">${dt.toDateString()}</h5>
                <img
-                 src="http://openweathermap.org/img/wn/10d@4x.png"
-                 class="card-img-top"
-                 alt="Weather description"
+                 src="http://openweathermap.org/img/wn/${
+                    day.weather[0].icon
+                  }@4x.png"
+                  class="card-img-top"
+                  alt="${day.weather[0].icon}"
                />
                <div class="card-body">
                   <h3 class="card-title">Temp - ${day.main.temp}</h3>
