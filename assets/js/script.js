@@ -14,7 +14,7 @@ function weatherCood(search) {
         })
         .then(function (data) {
             console.log(data);
-            let row = document.querySelector('#weather-info');
+            let row = document.querySelector('.weather.row');
 
             row.innerHTML = data.list
                 .map((day, idx) => {
