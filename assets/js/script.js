@@ -22,8 +22,30 @@ fetch(requestUrl)
 
             row.innerHTML = data.list
                 .map((day, idx) => {
-                    if(idx <= 2) {
-                    return '<p>Day</p>';
+                    if(idx <= 4) {
+                    return `<div class="col">
+             <div class="card" style="width: 30vw">
+               <h5 class="card-title p-2">Date</h5>
+               <img
+                 src="http://openweathermap.org/img/wn/10d@4x.png"
+                 class="card-img-top"
+                 alt="Weather description"
+               />
+               <div class="card-body">
+                  <h3 class="card-title">temp</h3>
+                  <p class="card-text">feels_like</p>
+                  <p class="card-text">temp_max</p>
+                  <p class="card-text">temp_min</p>
+                  <p class="card-text">Humidty</p>
+                  <p class="card-text">UV Index</p>
+                  <p class="card-text">Precipitation</p>
+                  <p class="card-text">Dew Point</p>
+                  <p class="card-text">Wind speed and direction</p>
+                  <p class="card-text">Sunrise</p>
+                  <p class="card-text">Sunset</p>
+                </div>
+             </div>
+           </div>`; 
                     }
                 })
                 .join(' ');
@@ -37,29 +59,7 @@ fetch(requestUrl)
 
 
                     // return 
-        //             `<div class="col">
-        //     <div class="card" style="width: 30vw">
-        //       <h5 class="card-title p-2">Date</h5>
-        //       <img
-        //         src="http://openweathermap.org/img/wn/10d@4x.png"
-        //         class="card-img-top"
-        //         alt="Weather description"
-        //       />
-        //       <div class="card-body">
-        //     //     <h3 class="card-title">temp</h3>
-        //     //     <p class="card-text">feels_like</p>
-        //     //     <p class="card-text">temp_max</p>
-        //     //     <p class="card-text">temp_min</p>
-        //     //     <p class="card-text">Humidty</p>
-        //     //     <p class="card-text">UV Index</p>
-        //     //     <p class="card-text">Precipitation</p>
-        //     //     <p class="card-text">Dew Point</p>
-        //     //     <p class="card-text">Wind speed and direction</p>
-        //     //     <p class="card-text">Sunrise</p>
-        //     //     <p class="card-text">Sunset</p>
-        //     //   </div>
-        //     </div>
-        //   </div>`;
+        //             
           
             }
             )
