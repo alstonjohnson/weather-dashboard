@@ -4,6 +4,46 @@
 const searchbtn = document.getElementById('searchbtn');
 const citySearch = document.getElementById('city-search');
 
+function updateSearchHistory(search) {
+    let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+    
+    // Add the new search to the beginning of the search history
+    searchHistory.unshift(search);
+    
+    
+    // Save the updated search history to local storage
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    
+    // Update the search history section on the page
+    renderSearchHistory(searchHistory);
+}
+
+function renderSearchHistory(searchHistory) {
+    let searchHistoryList = document.getElementById('search-history');
+    
+    // Clear the existing search history
+    searchHistoryList.innerHTML = '';
+    
+    // Render each search item in the search history
+    searchHistory.forEach((searchItem) => {
+        let li = document.createElement('li');
+        li.textContent = searchItem;
+        searchHistoryList.appendChild(li);
+    });
+}
+// Call the updateSearchHistory function inside your onSubmit function after saving the search to local storage:
+function onSubmit(event) {
+    event.preventDefault();
+
+    let search = citySearch.value;
+    localStorage.setItem("city", search);
+
+    // Update search history
+    updateSearchHistory(search);
+
+    weatherCood(search);
+}
+
 function weatherCood(search) {
     console.log(search);
     let units = 'imperial';
