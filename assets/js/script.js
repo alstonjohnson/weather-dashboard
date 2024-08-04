@@ -21,8 +21,10 @@ fetch(requestUrl)
             // let row4 = document.querySelector('#weather-info4');
 
             row.innerHTML = data.list
-                .map((day) => {
+                .map((day, idx) => {
+                    if(idx <= 2) {
                     return '<p>Day</p>';
+                    }
                 })
                 .join(' ');
 
