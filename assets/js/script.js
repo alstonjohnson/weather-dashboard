@@ -15,9 +15,6 @@ fetch(requestUrl)
         .then(function(data) {
             console.log(data);
             let row = document.querySelector('#weather-info');
-            // let row2 = document.querySelector('#weather-info2');
-            // let row3 = document.querySelector('#weather-info3');
-            // let row4 = document.querySelector('#weather-info4');
 
             row.innerHTML = data.list
                 .map((day, idx) => {
@@ -41,48 +38,9 @@ fetch(requestUrl)
                     }
                 })
                 .join(' ');
-
-            // row.innerHTML = data.main.feels_like;
-            // row2.innerHTML = data.main.temp;
-            // row.innerHTML = data.main.temp_max;
-            // row.innerHTML = data.main.temp_min;
-
-            // let row2 = document.querySelector('#weather-info2');
-
-
-                    // return 
-        //             
-          
             }
             )
-            // .join(' ');
-
-
-            // const currentWeather = document.createElement('table');
-            // currentWeather.textContent = 'Current: ' + data.currentConditions.conditions + ' Temp: ' + data.currentConditions.temp + 'F° Feels Like:' + data.currentConditions.feelslike + 'F°';
-            // weatherBody.appendChild(currentWeather);
-
         }
-
-
-
-
-// function weatherApi() {
-//     console.log(search);
-//     const requestUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat=32.808180&lon=--95.391150&appid=e43fec3568ad612b63990ffde119096a'
-//         fetch(requestUrl)
-//         .then(function(response) {
-//             return response.json();
-//         })
-//         .then(function(data) {
-//             console.log(data);
-            
-    //     })
-    // }
-
-// weatherAPI ();
-
-// const cityInput = document.getElementById("city-search");
 
 function onSubmit(event) {
     event.preventDefault(); 
