@@ -3,7 +3,6 @@
 // targeting input and button
 const searchbtn = document.getElementById('searchbtn');
 const citySearch = document.getElementById('city-search');
-console.log("weatherdashboard");
 
 function weatherCood(search) {
 console.log(search);
@@ -34,16 +33,8 @@ fetch(requestUrl)
                />
                <div class="card-body">
                   <h3 class="card-title">main.temp</h3>
-                  <p class="card-text">feels_like</p>
-                  <p class="card-text">temp_max</p>
-                  <p class="card-text">temp_min</p>
                   <p class="card-text">Humidty</p>
-                  <p class="card-text">UV Index</p>
-                  <p class="card-text">Precipitation</p>
-                  <p class="card-text">Dew Point</p>
                   <p class="card-text">Wind speed and direction</p>
-                  <p class="card-text">Sunrise</p>
-                  <p class="card-text">Sunset</p>
                 </div>
              </div>
            </div>`; 
