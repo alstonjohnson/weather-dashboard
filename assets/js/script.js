@@ -23,16 +23,17 @@ fetch(requestUrl)
             row.innerHTML = data.list
                 .map((day, idx) => {
                     if(idx <= 4) {
+                        let dt = new Date(day.dt * 1000);
                     return `<div class="col">
-             <div class="card" style="width: 30vw">
-               <h5 class="card-title p-2">Date</h5>
+             <div class="card">
+               <h5 class="card-title p-2">${dt.toDateString()}</h5>
                <img
                  src="http://openweathermap.org/img/wn/10d@4x.png"
                  class="card-img-top"
                  alt="Weather description"
                />
                <div class="card-body">
-                  <h3 class="card-title">temp</h3>
+                  <h3 class="card-title">main.temp</h3>
                   <p class="card-text">feels_like</p>
                   <p class="card-text">temp_max</p>
                   <p class="card-text">temp_min</p>
