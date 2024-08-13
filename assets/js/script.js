@@ -1,41 +1,64 @@
 
 // const weatherBody = document.getElementById('weather-info'); 
 // targeting input and button
+const storageInput = document.querySelector('.form-control');
+const text = document.querySelector('#search-history');
+const button = document.querySelector('#searchbtn');
+const storedInput = localStorage.getItem('textinput');
 const searchbtn = document.getElementById('searchbtn');
 const citySearch = document.getElementById('city-search');
 
-function updateSearchHistory(search) {
-    let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
-    
-    searchHistory.unshift(search);
-    
-    
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    
-    renderSearchHistory(searchHistory);
+if(storageInput) {
+    text.textContent = storedInput
 }
 
-function renderSearchHistory(searchHistory) {
-    let searchHistoryList = document.getElementById('search-history');
-    
-    searchHistoryList.innerHTML = '';
-    
-    searchHistory.forEach((searchItem) => {
-        let li = document.createElement('li');
-        li.textContent = searchItem;
-        searchHistoryList.appendChild(li);
-    });
+storageInput.addEventListener('input', word => {
+    text.textContent = word.target.value
+})
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('textinput', text.textContent)
 }
-function onSubmit(event) {
-    event.preventDefault();
 
-    let search = citySearch.value;
-    localStorage.setItem("city", search);
+button.addEventListener('click', saveToLocalStorage)
 
-    updateSearchHistory(search);
 
-    weatherCood(search);
-}
+
+
+
+
+// function updateSearchHistory(search) {
+//     let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+    
+//     searchHistory.unshift(search);
+    
+    
+//     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    
+//     renderSearchHistory(searchHistory);
+// }
+
+// function renderSearchHistory(searchHistory) {
+//     let searchHistoryList = document.getElementById('search-history');
+    
+//     searchHistoryList.innerHTML = '';
+    
+//     searchHistory.forEach((searchItem) => {
+//         let li = document.createElement('li');
+//         li.textContent = searchItem;
+//         searchHistoryList.appendChild(li);
+//     });
+// }
+// function onSubmit(event) {
+//     event.preventDefault();
+
+//     let search = citySearch.value;
+//     localStorage.setItem("city", search);
+
+//     updateSearchHistory(search);
+
+//     weatherCood(search);
+// }
 
 function weatherCood(search) {
     console.log(search);
