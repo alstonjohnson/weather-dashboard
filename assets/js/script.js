@@ -17,11 +17,18 @@ storageInput.addEventListener('input', word => {
 })
 
 const saveToLocalStorage = () => {
-    localStorage.setItem('textinput', text.textContent)
+    let allCities = JSON.parse(localStorage.getItem('previousCities')) || []
+    allCities.push(citySearch.value)
+    localStorage.setItem('previousCities', JSON.stringify(allCities));
 }
 
 button.addEventListener('click', saveToLocalStorage)
 
+const displaySearchHistory = () => {
+    let allCities = JSON.parse(localStorage.getItem('previousCities')) || [];
+
+    
+}
 
 
 
