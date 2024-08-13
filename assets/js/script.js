@@ -1,5 +1,8 @@
 
 // const weatherBody = document.getElementById('weather-info'); 
+
+// const { all } = require("../../../../SMU-VIRT-FSF-PT-05-2024-U-LOLC/11-Express/01-Activities/22-Stu_Modular-Routing/Unsolved/routes");
+
 // targeting input and button
 const storageInput = document.querySelector('.form-control');
 const text = document.querySelector('#search-history');
@@ -12,23 +15,37 @@ if(storageInput) {
     text.textContent = storedInput
 }
 
-storageInput.addEventListener('input', word => {
-    text.textContent = word.target.value
-})
+storageInput.addEventListener('input', () => {
+    localStorage.setItem('textinput', storageInput.value);
+});
 
 const saveToLocalStorage = () => {
-    let allCities = JSON.parse(localStorage.getItem('previousCities')) || []
-    allCities.push(citySearch.value)
+    let allCities = JSON.parse(localStorage.getItem('previousCities')) || [];
+    allCities.push(citySearch.value);
     localStorage.setItem('previousCities', JSON.stringify(allCities));
-}
+    displaySearchHistory();
+};
 
-button.addEventListener('click', saveToLocalStorage)
+button.addEventListener('click', () => { 
+    saveToLocalStorage();
+    displaySearchHistory();
+
+});
 
 const displaySearchHistory = () => {
     let allCities = JSON.parse(localStorage.getItem('previousCities')) || [];
+    const historyContainer = document.getElementById('search-history');
 
+    historyContainer.innerHTML = '';
+
+    allCities.forEach(city => {
+        const cityElement = document.createElement('div');
+        cityElement.textContent = city;
+        
+        historyContainer.appendChild(cityElement);
+    });
     
-}
+};
 
 
 
